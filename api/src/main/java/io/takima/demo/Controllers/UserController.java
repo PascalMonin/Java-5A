@@ -4,6 +4,9 @@ import io.takima.demo.Entities.User;
 import io.takima.demo.DAO.UserDAO;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 @CrossOrigin
@@ -16,8 +19,12 @@ public class UserController {
     }
 
     @GetMapping()
-    public Iterable<User> getUsers() {
-        return userDAO.findAll();
+    public List<User> getUsers() {
+        Iterable<User> it = this.userDAO.findAll();
+        List<User> users = new ArrayList<>();
+        it.forEach(e -> users.add(e));
+
+        return users;
     }
 
     @PostMapping()
@@ -25,5 +32,9 @@ public class UserController {
         return this.userDAO.save(user);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        this.userDAO.deleteById(id);
+    }
 
 }

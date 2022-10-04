@@ -5,7 +5,6 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
 import { defaultsDeep } from 'lodash';
-import {AuthService} from '../auth/service/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +12,21 @@ import {AuthService} from '../auth/service/auth.service';
 export class UserService {
 
   private url: string;
-  private currentUser: User;
 
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient) {
     this.url = environment.url;
-    this.authService.currentUserObservable().subscribe(u => {
-      this.currentUser = u;
-    })
   }
 
-  getUserDetails(): Observable<User> {
-    return this.http.get<User>(`${this.url}/users/${this.currentUser?.uid}`).pipe(timeout(10000));
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
+  }
+
+  addUser(user: User): Observable<User> {
+    return this.http.post<any>(`${this.url}/users`, user).pipe(timeout(10000));
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
   }
 
 }

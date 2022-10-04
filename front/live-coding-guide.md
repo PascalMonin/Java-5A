@@ -7,8 +7,8 @@
 
 ## Ajouter la navbar à app component
 
-## ListBooksAdminComponent && AddBookComponent
-* Generate ListBooksAdminComponent and AddBookComponent
+## ListUsersComponent && AddUserComponent
+* Generate ListUsersComponent and AddUserComponent
 * Add routes to app routing ('', 'dashboard', '/add-user')
 * Add HTML && CSS
 * Add user list

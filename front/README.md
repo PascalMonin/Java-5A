@@ -8,8 +8,8 @@
 ## Utliser un front Angular
 
 * Ouvrir le dossier *front* depuis Intellij
-* Taper `npm i` en ligne de commandes.
-  Cette commande permet d'installer toutes les dépendances précisées dans le fichier *package.json* et de générer le *package-lock.json*
+* Taper `npm i` en ligne de commandes. 
+Cette commande permet d'installer toutes les dépendances précisées dans le fichier *package.json* et de générer le *package-lock.json*
 
 ## Démarrer le serveur
 * Pour construire l'application et démarrer le serveur, entrer la commande : `ng serve`

@@ -27,19 +27,30 @@ create table rooms
     id bigint auto_increment,
     constraint rooms_pk
         primary key (id),
-    nom varchar(255) not null,
-    capacite integer not null,
     equipements varchar(255) not null,
-    photo varchar(255) not null
+    nom varchar(255) not null,
+    capacite Long not null,
+    photo varchar(255)
 );
 
 create table reservations
 (
     id bigint auto_increment,
-    constraint rooms_pk
+    constraint reservations_pk
         primary key (id),
     list_invites varchar(255) not null,
     date_debut DATETIME not null,
     date_fin DATETIME not null,
     hote_id bigint not null
 );
+
+create table equipments(
+  id bigint auto_increment,
+  constraint equipments_pk
+       primary key (id),
+       room_id bigint,
+    title varchar(255),
+    description varchar(255),
+    Foreign Key (room_id) REFERENCES rooms(id)
+
+)

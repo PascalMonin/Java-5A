@@ -1,8 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {User} from '../../models/user.model';
-import {AuthService} from '../../auth/service/auth.service';
-import {Subscription} from 'rxjs';
-import {Router} from '@angular/router';
+
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room.model';
 
@@ -20,7 +17,7 @@ export class ListRoomsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.roomService.listRooms().subscribe(rooms => this.rooms = rooms);
+    this.roomService.getRooms().subscribe(rooms => this.rooms = rooms);
   }
 
 }

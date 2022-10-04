@@ -1,25 +1,42 @@
 package io.takima.demo.Controllers;
 
+import io.takima.demo.DAO.RoomDAO;
 import io.takima.demo.Entities.Room;
-import io.takima.demo.Services.RoomService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/rooms")
 @CrossOrigin
 public class RoomController {
 
-    private final RoomService roomService;
 
-    @Autowired
-    public RoomController(RoomService roomService) {
-        this.roomService = roomService;
+    private final RoomDAO roomDAO;
+
+    public RoomController(RoomDAO roomDAO) {
+        this.roomDAO = roomDAO;
+    }
+    @GetMapping()
+    public List<Room> getRooms() {
+        Iterable<Room> it = this.roomDAO.findAll();
+        List<Room> rooms = new ArrayList<>();
+        it.forEach(e -> rooms.add(e));
+
+        return rooms;
     }
 
-    @GetMapping("/rooms")
-    public Iterable<Room> listBooks() {
-        return this.roomService.listRooms();
+    @PostMapping("/add")
+    public Room addRoom(@RequestBody Room room) {
+
+
+        return this.roomDAO.save(room);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteRoom(@PathVariable Long id) {
+        this.roomDAO.deleteById(id);
     }
 
 }
