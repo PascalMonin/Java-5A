@@ -1,8 +1,8 @@
-package io.takima.demo;
+package io.takima.demo.Controllers;
 
-import io.takima.demo.security.FirebaseAuthentication;
+import io.takima.demo.Entities.Room;
+import io.takima.demo.Services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,7 +17,7 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping()
+    @GetMapping("/rooms")
     public Iterable<Room> listBooks() {
         return this.roomService.listRooms();
     }

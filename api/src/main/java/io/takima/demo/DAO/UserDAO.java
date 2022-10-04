@@ -1,5 +1,6 @@
-package io.takima.demo;
+package io.takima.demo.DAO;
 
+import io.takima.demo.Entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -7,6 +8,6 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public interface BookDAO extends CrudRepository<Book, Long> {
+public interface UserDAO extends CrudRepository<User, String> {
 
 }

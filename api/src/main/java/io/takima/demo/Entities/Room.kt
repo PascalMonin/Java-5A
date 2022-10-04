@@ -1,4 +1,4 @@
-package io.takima.demo
+package io.takima.demo.Entities
 
 import javax.persistence.*
 
@@ -11,7 +11,7 @@ data class Room(
         @Id var id: Long?,
         @Column(name = "nom") var nom: String?,
         @Column(name = "capacite") var capacite: Int?,
-        @Column(name = "equipements") var equipements: Int?,
+        @Column(name = "equipements") var equipements: String?,
         @Column(name = "photo") var photo: String?) {
     constructor() : this(null, null, null, null, null)
 

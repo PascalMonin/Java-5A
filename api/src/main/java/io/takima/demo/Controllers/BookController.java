@@ -1,14 +1,11 @@
-package io.takima.demo;
+package io.takima.demo.Controllers;
 
+import io.takima.demo.Entities.Book;
+import io.takima.demo.Services.BookService;
 import io.takima.demo.security.FirebaseAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/books")

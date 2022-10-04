@@ -1,5 +1,7 @@
-package io.takima.demo;
+package io.takima.demo.Controllers;
 
+import io.takima.demo.Entities.Reservation;
+import io.takima.demo.Services.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

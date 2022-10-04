@@ -1,5 +1,7 @@
-package io.takima.demo;
+package io.takima.demo.Services;
 
+import io.takima.demo.Entities.Book;
+import io.takima.demo.DAO.BookDAO;
 import io.takima.demo.exceptions.BookAlreadyAvailableException;
 import io.takima.demo.exceptions.BookAlreadyBorrowedException;
 import io.takima.demo.exceptions.BookBorrowerException;

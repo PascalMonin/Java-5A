@@ -1,5 +1,7 @@
-package io.takima.demo;
+package io.takima.demo.Services;
 
+import io.takima.demo.DAO.ReservationDAO;
+import io.takima.demo.Entities.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package io.takima.demo
+package io.takima.demo.Entities
 
 import javax.persistence.*
 
