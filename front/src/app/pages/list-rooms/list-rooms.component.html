@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Welcome to your awesome Book Library</h2>
+  <h3>Sign in for more features!</h3>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Capacité</th>
+      <th scope="col">Equipements</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let room of rooms">
+      <td>{{room.id}}</td>
+      <td>{{room.nom}}</td>
+      <td>{{room.capacite}}</td>
+      <td>{{room.equipements}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
