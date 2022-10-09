@@ -1,7 +1,11 @@
 <div class="container">
   <h2>Welcome to your awesome Book Library</h2>
   <h3>Sign in for more features!</h3>
+  <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Rechercher"
+         style="margin: 10px auto; width: 50%;">
   <table class="table table-striped table-bordered table-hover">
+
+
     <thead class="thead">
     <tr>
       <th scope="col">#</th>
@@ -13,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let room of rooms">
+    <tr *ngFor="let room of rooms | roomsFilterPipe:searchText">
       <td>{{room.id}}</td>
       <td>{{room.nom}}</td>
       <td>{{room.capacite}}</td>

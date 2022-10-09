@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
 import { UpdateRoomComponent } from './pages/update-room/update-room.component';
+import { RoomsFilterPipePipe } from './pipes/rooms-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UpdateRoomComponent } from './pages/update-room/update-room.component';
     AddUserComponent,
       AddRoomComponent,
       ListRoomsComponent,
-      UpdateRoomComponent
+      UpdateRoomComponent,
+      RoomsFilterPipePipe
   ],
   imports: [
     BrowserModule,
