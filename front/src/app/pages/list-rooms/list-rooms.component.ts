@@ -12,6 +12,8 @@ import {Router} from '@angular/router';
 export class ListRoomsComponent implements OnInit {
 
   rooms: Room[];
+  searchText : string
+
 
   constructor(private roomService: RoomService, private router :Router) {
 

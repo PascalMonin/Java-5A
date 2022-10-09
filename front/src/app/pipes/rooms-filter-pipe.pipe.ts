@@ -6,7 +6,7 @@ import {Room} from '../models/room.model';
 })
 export class RoomsFilterPipePipe implements PipeTransform {
 
-  transform(list: Room[],searchText:string): any {
+  transform(list: Room[], searchText : string): any {
     if(!list)
       return [];
     if(!searchText)

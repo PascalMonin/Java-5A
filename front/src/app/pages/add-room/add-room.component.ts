@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {RoomService} from '../../services/room.service';
 import { defaultsDeep } from 'lodash';
@@ -11,7 +11,25 @@ import {Router} from '@angular/router';
 })
 export class AddRoomComponent implements OnInit {
 
+
   constructor(private roomService: RoomService, private router: Router) { }
+
+  @ViewChild('myPond') myPond: any;
+
+
+  pondOptions = {
+
+    multiple: false,
+    allowImagePreview: true,
+    allowFilePoster:true,
+    allowFileEncode: true,
+    allowDrop:true,
+    labelIdle: 'Téléverser la photo',
+    acceptedFileTypes:  'image/*' ,
+    credits: false
+  };
+
+
 
   ngOnInit() {
   }
@@ -29,4 +47,16 @@ export class AddRoomComponent implements OnInit {
 
     this.router.navigateByUrl('');
   }
+
+
+
+  pondHandleInit() {
+    console.log('FilePond has initialised', this.myPond);
+  }
+
+  pondHandleAddFile(event: any) {
+    console.log('Filename' + event.file.filename);
+    console.log('A file was added', event);
+  }
+
 }

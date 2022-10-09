@@ -15,7 +15,7 @@ export class UpdateRoomComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
-    this.room = this.roomService.getRoomById(this.id).subscribe(room => this.room = room )
+    this.roomService.getRoomById(this.id).subscribe(room => this.room = room )
   }
 
   updateRoom(){
