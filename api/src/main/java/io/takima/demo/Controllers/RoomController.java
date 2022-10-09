@@ -50,7 +50,7 @@ public class RoomController {
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteRoom(@PathVariable Long id) {
         this.roomDAO.deleteById(id);
     }

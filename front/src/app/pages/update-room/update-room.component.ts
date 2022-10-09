@@ -20,7 +20,7 @@ export class UpdateRoomComponent implements OnInit {
 
   updateRoom(){
     this.roomService.updateRoom(this.room).subscribe(room =>console.log(room));
-    this.router.navigateByUrl('/rooms');
+    this.router.navigateByUrl('');
   }
 
 }

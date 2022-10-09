@@ -27,6 +27,6 @@ export class AddRoomComponent implements OnInit {
 
     this.roomService.addRoom(room).subscribe(room => console.log(room));
 
-    this.router.navigateByUrl('/rooms');
+    this.router.navigateByUrl('');
   }
 }

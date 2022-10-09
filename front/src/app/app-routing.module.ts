@@ -8,12 +8,11 @@ import {UpdateRoomComponent} from './pages/update-room/update-room.component';
 
 
 const routes: Routes = [
-  { path: '', component: ListUsersComponent },
-  { path: 'list', component: ListUsersComponent },
   { path: 'add-user', component: AddUserComponent },
-  { path: 'rooms', component: ListRoomsComponent},
+  { path: '', component: ListRoomsComponent},
   { path: 'rooms/add', component: AddRoomComponent},
-  { path: 'rooms/update/:id', component: UpdateRoomComponent}
+  { path: 'rooms/update/:id', component: UpdateRoomComponent},
+  { path: 'rooms/delete/:id', component:  ListRoomsComponent}
 ];
 
 @NgModule({
