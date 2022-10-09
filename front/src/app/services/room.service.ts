@@ -21,6 +21,14 @@ export class RoomService {
     return this.http.get<Room[]>(`${this.url}/rooms`).pipe(timeout(10000));
   }
 
+  getRoomById(id: number): Observable<Room>{
+    return this.http.get<Room>(`${this.url}/rooms/update/${id}`).pipe(timeout(10000))
+  }
+
+  updateRoom(room : Room): Observable<any> {
+    return this.http.post(`${this.url}/rooms/update`,room).pipe(timeout(10000));
+  }
+
   addRoom(room: Room): Observable<Room> {
     return this.http.post<any>(`${this.url}/rooms/add`, room).pipe(timeout(10000));
   }
@@ -28,5 +36,6 @@ export class RoomService {
   deleteRoom(id: number): Observable<any> {
     return this.http.delete(`${this.url}/rooms/${id}`).pipe(timeout(10000));
   }
+
 
 }

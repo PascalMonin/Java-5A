@@ -8,6 +8,8 @@
       <th scope="col">Nom</th>
       <th scope="col">Capacité</th>
       <th scope="col">Equipements</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -16,6 +18,8 @@
       <td>{{room.nom}}</td>
       <td>{{room.capacite}}</td>
       <td>{{room.equipements}}</td>
+      <td> <input type="button" class="btn btn-warning" routerLink="/rooms/update/{{room.id}}" value="Modifier"> </td>
+      <td> <input type="button" class="btn btn-danger" value="Supprimer"> </td>
     </tr>
     </tbody>
   </table>

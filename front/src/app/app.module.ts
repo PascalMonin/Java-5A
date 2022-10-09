@@ -9,6 +9,7 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
+import { UpdateRoomComponent } from './pages/update-room/update-room.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
     ListUsersComponent,
     AddUserComponent,
       AddRoomComponent,
-      ListRoomsComponent
+      ListRoomsComponent,
+      UpdateRoomComponent
   ],
   imports: [
     BrowserModule,
