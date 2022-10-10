@@ -31,8 +31,7 @@
     "firebase": "^8.0.0",
     "ngx-filepond": "^6.0.1",
     "rxjs": "~6.6.3",
-    "tslib": "^2.0.1",
-    "zone.js": "~0.11.1"
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1001.3",
