@@ -1,6 +1,6 @@
 create table users
 (
-    id bigint,
+    id bigint auto_increment,
     constraint users_pk
         primary key (id),
     first_name varchar(255) not null,

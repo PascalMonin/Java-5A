@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Room} from '../models/room.model';
+import {Room} from '../../models/room.model';
 
 @Pipe({
   name: 'roomsFilterPipe'

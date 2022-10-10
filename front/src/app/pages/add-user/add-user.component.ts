@@ -27,6 +27,6 @@ export class AddUserComponent implements OnInit {
 
     this.userService.addUser(user).subscribe(user => console.log(user));
 
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/users');
   }
 }
