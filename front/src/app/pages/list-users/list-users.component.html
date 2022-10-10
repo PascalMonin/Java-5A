@@ -17,6 +17,7 @@
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.age}}</td>
+      <td> <input type="button" class="btn btn-warning" routerLink="/users/update/{{user.id}}" value="Modifier"> </td>
       <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(user.id)">Delete</button></td>
     </tr>
     </tbody>

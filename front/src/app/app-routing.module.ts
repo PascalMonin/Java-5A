@@ -4,13 +4,15 @@ import {AddUserComponent} from './pages/add-user/add-user.component';
 import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
 import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {UpdateRoomComponent} from './pages/update-room/update-room.component';
-import {ListUsersComponent} from "./pages/list-users/list-users.component";
+import {ListUsersComponent} from './pages/list-users/list-users.component';
+import {UpdateUserComponent} from './pages/update-user/update-user.component';
 
 
 const routes: Routes = [
-  { path: 'add-user', component: AddUserComponent },
+  { path: 'users/add', component: AddUserComponent },
   { path: '', component: ListRoomsComponent},
   { path: 'users', component: ListUsersComponent},
+  { path: 'users/update/:id', component: UpdateUserComponent},
   { path: 'rooms/add', component: AddRoomComponent},
   { path: 'rooms/update/:id', component: UpdateRoomComponent},
   { path: 'rooms/delete/:id', component:  ListRoomsComponent}
