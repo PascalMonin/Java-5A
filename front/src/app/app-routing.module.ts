@@ -6,6 +6,7 @@ import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {UpdateRoomComponent} from './pages/update-room/update-room.component';
 import {ListUsersComponent} from './pages/list-users/list-users.component';
 import {UpdateUserComponent} from './pages/update-user/update-user.component';
+import {AddReservationComponent} from './pages/add-reservation/add-reservation.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: '', component: ListRoomsComponent},
   { path: 'users', component: ListUsersComponent},
   { path: 'users/update/:id', component: UpdateUserComponent},
+  { path: 'reservations/add/:id', component: AddReservationComponent},
   { path: 'rooms/add', component: AddRoomComponent},
   { path: 'rooms/update/:id', component: UpdateRoomComponent},
   { path: 'rooms/delete/:id', component:  ListRoomsComponent}

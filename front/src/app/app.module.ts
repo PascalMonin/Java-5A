@@ -10,6 +10,7 @@ import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
 import { UpdateRoomComponent } from './pages/update-room/update-room.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import {AddReservationComponent} from './pages/add-reservation/add-reservation.component';
 import { RoomsFilterPipePipe } from './pipes/rooms/rooms-filter-pipe.pipe';
 import { UsersFilterPipePipe } from './pipes/users/users-filter-pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,12 +47,13 @@ registerPlugin(FilePondPluginFileEncode);
     AppComponent,
     ListUsersComponent,
     AddUserComponent,
-      AddRoomComponent,
-      ListRoomsComponent,
-      UpdateRoomComponent,
-      UpdateUserComponent,
-      RoomsFilterPipePipe,
-    UsersFilterPipePipe
+    AddRoomComponent,
+    ListRoomsComponent,
+    UpdateRoomComponent,
+    UpdateUserComponent,
+    RoomsFilterPipePipe,
+    UsersFilterPipePipe,
+    AddReservationComponent
   ],
   imports: [
     BrowserModule,

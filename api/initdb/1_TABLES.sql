@@ -35,10 +35,11 @@ create table reservations
     id bigint auto_increment,
     constraint reservations_pk
         primary key (id),
-    list_invites varchar(255) not null,
-    date_debut DATETIME not null,
-    date_fin DATETIME not null,
-    hote_id bigint not null
+    room_id bigint not null,
+    host_id bigint not null,
+    attendees varchar(255) not null,
+    start_date DATETIME not null,
+    end_date DATETIME not null
 );
 
 create table equipments(
