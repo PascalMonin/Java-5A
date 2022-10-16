@@ -1,4 +1,5 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
+import {FormControl} from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import {RoomService} from '../../services/room.service';
 import { defaultsDeep } from 'lodash';
@@ -10,14 +11,16 @@ import {User} from '../../models/user.model';
 
 @Component({
   selector: 'app-add-reservation',
-  templateUrl: './add-reservation.component.html',
-  styleUrls: ['./add-reservation.component.css']
+  templateUrl: './add-reservation.component.html'
 })
 export class AddReservationComponent implements OnInit {
 
+  hostFormCtrl = new FormControl('');
+  attendeesFormCtrl = new FormControl('');
   roomId: number;
   room =  new Room();
   users: User[];
+
 
   constructor(
       private reservationService: ReservationService,
@@ -33,18 +36,19 @@ export class AddReservationComponent implements OnInit {
   }
 
   onSubmit(ngForm: NgForm) {
-    console.log(ngForm);
+    console.log(ngForm.value);
     const reservation = defaultsDeep({
       id: null,
       roomId: this.roomId,
-      hostId: ngForm.form.value.hostId,
-      attendees: ngForm.form.value.attendees,
+      hostId: ngForm.form.value.host,
+      attendees: ngForm.form.value.attendees.toString(),
       startDate: ngForm.form.value.startDate,
       endDate: ngForm.form.value.endDate
     });
 
+    console.log(ngForm.value);
     this.reservationService.addReservation(reservation).subscribe(reservation => console.log(reservation));
 
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/reservations');
   }
 }
