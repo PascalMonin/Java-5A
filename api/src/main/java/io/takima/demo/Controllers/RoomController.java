@@ -5,6 +5,8 @@ import io.takima.demo.Entities.Room;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -48,12 +50,12 @@ public class RoomController {
 
     public Optional<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
         String message;
-        Path root = Paths.get("./front/src/assets");
-//        try {
-//            Files.createDirectory(root);
-//        } catch (IOException e) {
-//            throw new RuntimeException("Could not initialize folder for upload!");
-//        }
+        Path root = Paths.get("./front/src/uploads");
+        try {
+            Files.createDirectory(root);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not initialize folder for upload!");
+        }
 
         String filename = file.getOriginalFilename();
 

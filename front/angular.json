@@ -22,11 +22,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              {
-                "glob": "**/*",
-                "input": "../../uploads/",
-                "output": "src/assets/"
-              }
+              "src/uploads/"
             ],
             "styles": [
               "node_modules/filepond/dist/filepond.css",
