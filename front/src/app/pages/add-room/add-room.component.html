@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 5%; justify-content: center">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nom"> Nom</label>
             <input id="nom" class="form-control" type="Text" name="nom" ngModel>
@@ -12,6 +12,8 @@
             <label for="equipements"> Equipements</label>
             <input id="equipements" class="form-control" type="Text" name="equipements" ngModel>
         </div>
+
+
 
         <div class="form-group">
             <label for="photo">Photo</label>
