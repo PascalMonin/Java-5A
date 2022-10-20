@@ -1,14 +1,11 @@
 create table users
 (
-    uid VARCHAR(255),
+    id bigint auto_increment,
     constraint users_pk
-        primary key (uid),
-    display_name varchar(255) not null,
-    email varchar(255) not null,
-    profile_url varchar(255) not null,
-    birthdate DATETIME not null,
-    nom varchar(255) not null,
-    prenom varchar(255) not null
+        primary key (id),
+    first_name varchar(255) not null,
+    last_name varchar(255) not null,
+    age integer not null
 
 );
 
@@ -29,7 +26,7 @@ create table rooms
         primary key (id),
     equipements varchar(255) not null,
     nom varchar(255) not null,
-    capacite Long not null,
+    capacite bigint not null,
     photo varchar(255)
 );
 
@@ -38,10 +35,11 @@ create table reservations
     id bigint auto_increment,
     constraint reservations_pk
         primary key (id),
-    list_invites varchar(255) not null,
-    date_debut DATETIME not null,
-    date_fin DATETIME not null,
-    hote_id bigint not null
+    room_id bigint not null,
+    host_id bigint not null,
+    attendees varchar(255) not null,
+    start_date DATETIME not null,
+    end_date DATETIME not null
 );
 
 create table equipments(

@@ -1,11 +1,13 @@
 package io.takima.demo.Controllers;
 
+import io.takima.demo.Entities.Room;
 import io.takima.demo.Entities.User;
 import io.takima.demo.DAO.UserDAO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -27,14 +29,25 @@ public class UserController {
         return users;
     }
 
+    @GetMapping("/update/{id}")
+    public Optional<User> getUserById(@PathVariable Long id)
+    {
+        return this.userDAO.findById(id);
+    }
+
     @PostMapping()
     public User addUser(@RequestBody User user) {
         return this.userDAO.save(user);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable Long id) {
         this.userDAO.deleteById(id);
     }
 
+    @PostMapping("/update")
+    public User updateUser(@RequestBody User user)
+    {
+        return this.userDAO.save(user);
+    }
 }

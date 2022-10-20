@@ -1,4 +1,6 @@
 <div class="container">
+  <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Rechercher"
+         style="margin: 10px auto; width: 50%;">
   <table class="table table-striped table-bordered table-hover">
     <thead class="thead">
     <tr>
@@ -10,11 +12,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | usersFilterPipe:searchText">
       <td>{{user.id}}</td>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.age}}</td>
+      <td> <input type="button" class="btn btn-warning" routerLink="/users/update/{{user.id}}" value="Modifier"> </td>
       <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(user.id)">Delete</button></td>
     </tr>
     </tbody>

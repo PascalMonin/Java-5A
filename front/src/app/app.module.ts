@@ -5,12 +5,17 @@ import { AppComponent } from './app.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
 import { AddUserComponent } from './pages/add-user/add-user.component';
 import { HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddRoomComponent} from './pages/add-room/add-room.component';
 import {ListRoomsComponent} from './pages/list-rooms/list-rooms.component';
 import { UpdateRoomComponent } from './pages/update-room/update-room.component';
-import { RoomsFilterPipePipe } from './pipes/rooms-filter-pipe.pipe';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import {AddReservationComponent} from './pages/add-reservation/add-reservation.component';
+import { RoomsFilterPipePipe } from './pipes/rooms/rooms-filter-pipe.pipe';
+import { UsersFilterPipePipe } from './pipes/users/users-filter-pipe.pipe';
+import { ReservationsFilterPipePipe } from './pipes/reservations/reservations-filter-pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ListReservationsComponent} from './pages/list-reservations/list-reservations.component';
 
 // import filepond module
 import { FilePondModule, registerPlugin } from 'ngx-filepond';
@@ -26,7 +31,9 @@ import FilePondPluginFilePoster from 'filepond-plugin-file-poster';
 
 // Import the plugin code
 import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
 
 // // Import the plugin styles
 // import 'filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css';
@@ -43,20 +50,29 @@ registerPlugin(FilePondPluginFileEncode);
   declarations: [
     AppComponent,
     ListUsersComponent,
+    ListReservationsComponent,
     AddUserComponent,
-      AddRoomComponent,
-      ListRoomsComponent,
-      UpdateRoomComponent,
-      RoomsFilterPipePipe
+    AddRoomComponent,
+    ListRoomsComponent,
+    UpdateRoomComponent,
+    UpdateUserComponent,
+    RoomsFilterPipePipe,
+    UsersFilterPipePipe,
+    ReservationsFilterPipePipe,
+    AddReservationComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    FilePondModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        FilePondModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatOptionModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

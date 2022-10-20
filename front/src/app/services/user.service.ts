@@ -29,4 +29,11 @@ export class UserService {
     return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
   }
 
+  getUserById(id: number): Observable<User>{
+    return this.http.get<User>(`${this.url}/users/update/${id}`).pipe(timeout(10000))
+  }
+
+  updateUser(user : User): Observable<any> {
+    return this.http.post(`${this.url}/users/update`,user).pipe(timeout(10000));
+  }
 }
