@@ -6,6 +6,7 @@ import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,12 +30,19 @@ export class RoomService {
     return this.http.post(`${this.url}/rooms/update`,room).pipe(timeout(10000));
   }
 
-  addRoom(room: Room): Observable<Room> {
+  addRoom(room: Room, ): Observable<Room> {
     return this.http.post<any>(`${this.url}/rooms/add`, room).pipe(timeout(10000));
   }
 
+  uploadImage(file: File): Observable<any>
+  {
+    const formData = new FormData()
+    formData.append('file',file)
+    return this.http.post<any>(`${this.url}/rooms/upload`, formData).pipe(timeout(10000));
+  }
+
   deleteRoom(id: number): Observable<any> {
-    return this.http.delete(`${this.url}/rooms/${id}`).pipe(timeout(10000));
+    return this.http.delete(`${this.url}/rooms/delete/${id}`).pipe(timeout(10000));
   }
 
 

@@ -4,6 +4,7 @@ import {RoomService} from '../../services/room.service';
 import { defaultsDeep } from 'lodash';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.component.html',
@@ -16,6 +17,7 @@ export class AddRoomComponent implements OnInit {
 
   @ViewChild('myPond') myPond: any;
 
+  file : File;
 
   pondOptions = {
 
@@ -30,12 +32,11 @@ export class AddRoomComponent implements OnInit {
   };
 
 
-
   ngOnInit() {
   }
 
   onSubmit(ngForm: NgForm) {
-    console.log(ngForm);
+
     const room = defaultsDeep({
       id: null,
       nom: ngForm.form.value.nom,
@@ -43,8 +44,10 @@ export class AddRoomComponent implements OnInit {
       capacite: ngForm.form.value.capacite,
     });
 
-    this.roomService.addRoom(room).subscribe(room => console.log(room));
-
+     this.roomService.uploadImage(this.file).subscribe((file_name)=>{
+       room.photo=file_name
+       this.roomService.addRoom(room).subscribe(room => console.log(room))
+    });
     this.router.navigateByUrl('');
   }
 
@@ -55,8 +58,11 @@ export class AddRoomComponent implements OnInit {
   }
 
   pondHandleAddFile(event: any) {
-    console.log('Filename' + event.file.filename);
+    this.file =event.file.file
+    console.log('Filename' + this.file);
     console.log('A file was added', event);
   }
+
+
 
 }

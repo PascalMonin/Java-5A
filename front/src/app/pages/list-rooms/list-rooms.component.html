@@ -11,6 +11,7 @@
       <th scope="col">Nom</th>
       <th scope="col">Capacité</th>
       <th scope="col">Equipements</th>
+      <th scope="col">photo</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -21,6 +22,7 @@
       <td>{{room.nom}}</td>
       <td>{{room.capacite}}</td>
       <td>{{room.equipements}}</td>
+
       <td>
         <input type="button" class="btn btn-info" routerLink="/reservations/add/{{room.id}}" value="Réserver">
       </td>
@@ -33,6 +35,29 @@
     </tr>
     </tbody>
   </table>
+
+
+  <div class="card-group">
+  <div class="card" *ngFor="let room of rooms | roomsFilterPipe:searchText">
+    <img class="card-img-top" style="height: 50vh" src="uploads/{{room.photo}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{room.name}}</h5>
+      <p class="card-text"> Equipements :{{room.equipements}}</p>
+      <p class="card-text"> Capacité :{{room.capacite}}</p>
+    </div>
+    <div class="card-footer">
+      <div class="row *">
+        <div class="col sm">
+          <input type="button" class="btn btn-warning" routerLink="/rooms/update/{{room.id}}" value="Modifier">
+        </div>
+        <div class="col sm">
+          <input type="button" class="btn btn-danger"  (click)="deleteRoom(room.id)" value="Supprimer">
+        </div>
+      </div>
+      <small class="text-muted"> </small>
+    </div>
+  </div>
+  </div>
 </div>
 
 

@@ -21,7 +21,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/uploads/"
             ],
             "styles": [
               "node_modules/filepond/dist/filepond.css",
