@@ -5,6 +5,7 @@ create table users
         primary key (id),
     first_name varchar(255) not null,
     last_name varchar(255) not null,
+    email varchar(255) not null,
     age integer not null
 
 );

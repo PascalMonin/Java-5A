@@ -17,7 +17,7 @@
                 Participants
             </label>
             <select id="attendees" name="attendees" class="form-control" placeholder="Choisir plusieurs avec ctrl+clic" multiple ngModel>
-                <option *ngFor="let user of users" [ngValue]="user.id">{{user.firstName + " " + user.lastName}}</option>
+                <option *ngFor="let user of users" [ngValue]="user.firstName+' '+user.lastName">{{user.firstName + " " + user.lastName}}</option>
             </select>
         </div>
         <div class="form-group">

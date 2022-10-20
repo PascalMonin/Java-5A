@@ -22,6 +22,7 @@ export class AddUserComponent implements OnInit {
       id: null,
       firstName: ngForm.form.value.firstName,
       lastName: ngForm.form.value.lastName,
+      email: ngForm.form.value.email,
       age: ngForm.form.value.age,
     });
 

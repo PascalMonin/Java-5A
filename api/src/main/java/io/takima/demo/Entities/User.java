@@ -29,6 +29,11 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
     @Column(name = "age")
     private Integer age;
 
+
+    @Column(name = "email")
+    private String email;
+
+
     public User() {}
 
     public void setId(Long id) {
@@ -62,6 +67,15 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     @Override
     public boolean equals(Object o) {

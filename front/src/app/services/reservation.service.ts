@@ -22,7 +22,7 @@ export class ReservationService {
   }
 
   addReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.post<any>(`${this.url}/reservations`, reservation).pipe(timeout(10000));
+    return this.http.post<any>(`${this.url}/reservations/add`, reservation).pipe(timeout(10000));
   }
 
   deleteReservation(id: number): Observable<any> {

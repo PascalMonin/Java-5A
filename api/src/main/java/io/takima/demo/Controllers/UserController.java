@@ -35,7 +35,7 @@ public class UserController {
         return this.userDAO.findById(id);
     }
 
-    @PostMapping()
+    @PostMapping("/add")
     public User addUser(@RequestBody User user) {
         return this.userDAO.save(user);
     }

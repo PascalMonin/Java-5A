@@ -22,7 +22,7 @@ export class UserService {
   }
 
   addUser(user: User): Observable<User> {
-    return this.http.post<any>(`${this.url}/users`, user).pipe(timeout(10000));
+    return this.http.post<any>(`${this.url}/users/add`, user).pipe(timeout(10000));
   }
 
   deleteUser(id: number): Observable<any> {

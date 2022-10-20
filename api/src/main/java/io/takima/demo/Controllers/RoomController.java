@@ -54,7 +54,7 @@ public class RoomController {
         try {
             Files.createDirectory(root);
         } catch (IOException e) {
-            throw new RuntimeException("Could not initialize folder for upload!");
+            e.printStackTrace();
         }
 
         String filename = file.getOriginalFilename();
