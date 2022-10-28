@@ -12,14 +12,15 @@
       <th scope="col">Email</th>
       <th scope="col">Age</th>
       <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let user of users | usersFilterPipe:searchText">
       <td>{{user.id}}</td>
       <td>{{user.firstName}}</td>
-      <td>{{user.email}}</td>
       <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
       <td>{{user.age}}</td>
       <td> <input type="button" class="btn btn-warning" routerLink="/users/update/{{user.id}}" value="Modifier"> </td>
       <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(user.id)">Delete</button></td>

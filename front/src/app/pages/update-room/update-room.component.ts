@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoomService} from '../../services/room.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Room} from '../../models/room.model';
+import {timeout} from 'rxjs/operators';
 
 @Component({
   selector: 'app-update-room',
@@ -20,6 +21,7 @@ export class UpdateRoomComponent implements OnInit {
 
   updateRoom(){
     this.roomService.updateRoom(this.room).subscribe(room =>console.log(room));
+    timeout(15000);
     this.router.navigateByUrl('');
   }
 

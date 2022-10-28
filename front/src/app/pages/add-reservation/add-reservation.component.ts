@@ -8,6 +8,7 @@ import {ReservationService} from '../../services/reservation.service';
 import {Room} from '../../models/room.model';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
+import {timeout} from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-reservation',
@@ -47,7 +48,7 @@ export class AddReservationComponent implements OnInit {
     });
 
     this.reservationService.addReservation(reservation).subscribe(reservation => console.log(reservation));
-
+    timeout(15000);
     this.router.navigateByUrl('/reservations');
   }
 }

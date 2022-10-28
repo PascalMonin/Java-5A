@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {UserService} from '../../services/user.service';
 import { defaultsDeep } from 'lodash';
 import {Router} from '@angular/router';
+import {timeout} from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-user',
@@ -27,7 +28,7 @@ export class AddUserComponent implements OnInit {
     });
 
     this.userService.addUser(user).subscribe(user => console.log(user));
-
+    timeout(15000);
     this.router.navigateByUrl('/users');
   }
 }

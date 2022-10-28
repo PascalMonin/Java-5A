@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {RoomService} from '../../services/room.service';
 import { defaultsDeep } from 'lodash';
 import {Router} from '@angular/router';
+import {timeout} from 'rxjs/operators';
 
 
 @Component({
@@ -48,6 +49,7 @@ export class AddRoomComponent implements OnInit {
        room.photo=file_name
        this.roomService.addRoom(room).subscribe(room => console.log(room))
     });
+    timeout(15000);
     this.router.navigateByUrl('');
   }
 

@@ -40,7 +40,7 @@ public class UserController {
         return this.userDAO.save(user);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         this.userDAO.deleteById(id);
     }

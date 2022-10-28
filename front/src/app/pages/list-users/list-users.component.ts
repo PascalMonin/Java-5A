@@ -19,7 +19,7 @@ export class ListUsersComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(succes => {
+    this.userService.deleteUser(id).subscribe(success => {
       this.users = this.users.filter(user => user.id !== id)
     });
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../models/user.model';
+import {timeout} from 'rxjs/operators';
 
 @Component({
   selector: 'app-update-user',
@@ -20,6 +21,7 @@ export class UpdateUserComponent implements OnInit {
 
   updateUser(){
     this.userService.updateUser(this.user).subscribe(user =>console.log(user));
+    timeout(15000);
     this.router.navigateByUrl('/users');
   }
 
