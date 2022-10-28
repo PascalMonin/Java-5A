@@ -20,18 +20,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let reservation of reservations | reservationsFilterPipe:searchText">
+    <tr *ngFor="let reservation of reservations| reservationsFilterPipe:searchText">
       <td>{{reservation.id}}</td>
-      <td>{{reservation.roomId}}</td>
-      <td>{{reservation.hostId}}</td>
+      <td>{{reservation.roomName}}</td>
+      <td>{{reservation.hostName}}</td>
       <td>{{reservation.attendees}}</td>
-      <td>{{reservation.startDate}}</td>
-      <td>{{reservation.endDate}}</td>
+      <td>{{reservation.startDate | date :'short'}}</td>
+      <td>{{reservation.endDate | date :'short'}}</td>
       <td>
         <input type="button" class="btn btn-warning" routerLink="/reservations/update/{{reservation.id}}" value="Modifier">
       </td>
       <td>
-        <input type="button" class="btn btn-danger"  (click)="deleteReservation(reservation.id)" value="Supprimer">
+        <input type="button" class="btn btn-danger" (click)="deleteReservation(reservation.id)" value="Supprimer">
       </td>
     </tr>
     </tbody>

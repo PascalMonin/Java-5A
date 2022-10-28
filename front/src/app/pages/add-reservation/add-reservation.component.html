@@ -9,7 +9,10 @@
                 Organisateur
             </label>
             <select id="host" name="host" class="form-control" placerholder="Choisir un seul" ngModel>
-                <option *ngFor="let user of users" [ngValue]="user.id">{{user.firstName + " " + user.lastName}}</option>
+                <option *ngFor="let user of users"
+                        [ngValue]="user">
+                    {{user.firstName + " " + user.lastName}}
+                </option>
             </select>
         </div>
         <div class="form-group">

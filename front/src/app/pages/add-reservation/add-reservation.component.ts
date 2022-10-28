@@ -15,8 +15,6 @@ import {User} from '../../models/user.model';
 })
 export class AddReservationComponent implements OnInit {
 
-  hostFormCtrl = new FormControl('');
-  attendeesFormCtrl = new FormControl('');
   roomId: number;
   room =  new Room();
   users: User[];
@@ -40,13 +38,14 @@ export class AddReservationComponent implements OnInit {
     const reservation = defaultsDeep({
       id: null,
       roomId: this.roomId,
-      hostId: ngForm.form.value.host,
+      roomName: ngForm.form.value.nom,
+      hostId: ngForm.form.value.host.id,
+      hostName: (ngForm.form.value.host.firstName + ' ' + ngForm.form.value.host.lastName).toString(),
       attendees: ngForm.form.value.attendees.toString(),
       startDate: ngForm.form.value.startDate,
       endDate: ngForm.form.value.endDate
     });
 
-    console.log(ngForm.value);
     this.reservationService.addReservation(reservation).subscribe(reservation => console.log(reservation));
 
     this.router.navigateByUrl('/reservations');

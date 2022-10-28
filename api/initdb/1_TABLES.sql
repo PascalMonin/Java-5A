@@ -37,7 +37,9 @@ create table reservations
     constraint reservations_pk
         primary key (id),
     room_id bigint not null,
+    room_name varchar(255) not null,
     host_id bigint not null,
+    host_name varchar(255) not null,
     attendees varchar(255) not null,
     start_date DATETIME not null,
     end_date DATETIME not null

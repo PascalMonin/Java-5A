@@ -23,8 +23,14 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
     @Column(name = "room_id")
     private Long roomId;
 
-    @Column(name = "host_id")
+    @Column(name = "room_name")
+    private String roomName;
+
+    @Column(name =   "host_id")
     private Long hostId;
+
+    @Column(name = "host_name")
+    private String hostName;
 
     @Column(name = "attendees")
     //@Convert(converter = ListToStringConverter.class)
@@ -37,6 +43,22 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
     private Date endDate;
 
     public Reservation() {}
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
     public Long getRoomId() {
         return roomId;

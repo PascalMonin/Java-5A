@@ -3,6 +3,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ReservationService} from '../../services/reservation.service';
 import {Router} from '@angular/router';
 import {Reservation} from '../../models/reservation.model';
+import {RoomService} from '../../services/room.service';
+import {UserService} from '../../services/user.service';
+import {Room} from '../../models/room.model';
 
 @Component({
   selector: 'app-list-reservations',
@@ -15,7 +18,9 @@ export class ListReservationsComponent implements OnInit {
   searchText : string
 
 
-  constructor(private reservationService: ReservationService, private router :Router) {
+  constructor(
+      private reservationService: ReservationService,
+      private router: Router) {
 
   }
 
